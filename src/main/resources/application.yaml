@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/fast_food
+    username: postgres
+    password: 690
+  application:
+    name: GATEWAY-SERVICE
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
