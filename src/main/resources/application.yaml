@@ -13,3 +13,8 @@ eureka:
   client:
     fetch-registry: true
     register-with-eureka: true
+
+  cloud:
+    gateway:
+      routes:
+
