@@ -1,4 +1,4 @@
-package com.fazliddin.appgatewayservice.contrller;
+package com.fazliddin.appgatewayservice.controller;
 
 import com.fazliddin.library.payload.ApiResult;
 import com.fazliddin.library.payload.ErrorData;
