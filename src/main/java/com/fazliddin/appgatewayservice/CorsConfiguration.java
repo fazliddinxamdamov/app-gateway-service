@@ -1,4 +1,4 @@
-package com.fazliddin.appgatewayservice.controller;
+package com.fazliddin.appgatewayservice;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

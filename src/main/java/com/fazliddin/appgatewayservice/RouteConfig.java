@@ -1,4 +1,4 @@
-package com.fazliddin.appgatewayservice.controller;
+package com.fazliddin.appgatewayservice;
 
 import io.github.resilience4j.circuitbreaker.CircuitBreakerConfig;
 import io.github.resilience4j.timelimiter.TimeLimiterConfig;
@@ -31,21 +31,21 @@ public class RouteConfig {
                                 .circuitBreaker(config -> config.setName("fastFoodCallback").setFallbackUri("/fallback"))
                                 .addRequestHeader("serviceUsername", gatewayServiceUsername)
                                 .addRequestHeader("servicePassword", gatewayServicePassword))
-                        .uri("library://AUTH-SERVICE"))
+                        .uri("lb://AUTH-SERVICE"))
                 .route(r -> r
                         .path("/api/branch/**")
                         .filters(f -> f
                                 .circuitBreaker(config -> config.setName("fastFoodCallback").setFallbackUri("/fallback"))
                                 .addRequestHeader("serviceUsername", gatewayServiceUsername)
                                 .addRequestHeader("servicePassword", gatewayServicePassword))
-                        .uri("library://BRANCH-SERVICE"))
+                        .uri("lb://BRANCH-SERVICE"))
                 .route(r -> r
                         .path("/api/order/**")
                         .filters(f -> f
                                 .circuitBreaker(config -> config.setName("fastFoodCallback").setFallbackUri("/fallback"))
                                 .addRequestHeader("serviceUsername", gatewayServiceUsername)
                                 .addRequestHeader("servicePassword", gatewayServicePassword))
-                        .uri("library://ORDER-SERVICE"))
+                        .uri("lb://ORDER-SERVICE"))
                 .route(r -> r
                         .path("/api/product/**")
                         .filters(f -> f
@@ -53,7 +53,7 @@ public class RouteConfig {
                                 .addRequestHeader("serviceUsername", gatewayServiceUsername)
                                 .addRequestHeader("servicePassword", gatewayServicePassword)
                         )
-                        .uri("library://PRODUCT-SERVICE"))
+                        .uri("lb://PRODUCT-SERVICE"))
                 .build();
 
     }

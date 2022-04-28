@@ -1,4 +1,4 @@
-package com.fazliddin.appgatewayservice.controller;
+package com.fazliddin.appgatewayservice;
 
 import com.fazliddin.library.payload.ApiResult;
 import com.fazliddin.library.payload.ErrorData;
@@ -21,7 +21,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/fallBack")
 @RequiredArgsConstructor
-public class FallBackController {
+public class    FallBackController {
 
     String ERROR_MESSAGE = "There was a problem connecting to the Service";
     HttpStatus HTTP_STATUS = HttpStatus.BAD_REQUEST;
